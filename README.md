@@ -1,3 +1,21 @@
+# neovim-config
+My Neovim config. This is a setup for my commands + plugins that I think are pretty cool.
+
+## Setup
+### Packer
+```bash
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+ ```
+
+### Git
+The following commands are used to initialise the git repositiory without copying over the folder as well.
+```bash
+git init
+git remote add origin <repo>
+git pull origin main
+```
+
 ### ThePrimeagen's init.lua
 Prerequisite: install [ripgrep](https://github.com/BurntSushi/ripgrep).
 
