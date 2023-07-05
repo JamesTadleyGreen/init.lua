@@ -1,3 +1,5 @@
+vim.opt.pastetoggle = "<F3>"
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -28,3 +30,5 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 vim.opt.autowrite = true
+
+vim.opt.spell = true
