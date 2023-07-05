@@ -51,6 +51,9 @@ return require('packer').startup(function(use)
 
   use("folke/zen-mode.nvim")
   use("github/copilot.vim")
+  use("pbrisbin/vim-syntax-shakespeare")
+  use("habamax/vim-godot")
+  use("mfussenegger/nvim-dap")
 
 end)
 
