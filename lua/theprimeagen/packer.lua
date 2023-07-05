@@ -25,7 +25,6 @@ return require('packer').startup(function(use)
     use('nvim-treesitter/playground')
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
-    use('tpope/vim-fugitive')
 
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -49,11 +48,11 @@ return require('packer').startup(function(use)
         }
     }
 
-  use("folke/zen-mode.nvim")
-  use("github/copilot.vim")
-  use("pbrisbin/vim-syntax-shakespeare")
-  use("habamax/vim-godot")
-  use("mfussenegger/nvim-dap")
+    use("folke/zen-mode.nvim")
+    use("github/copilot.vim")
+    use("pbrisbin/vim-syntax-shakespeare")
+    use("habamax/vim-godot")
+    use("mfussenegger/nvim-dap")
 
     use({
         "iamcco/markdown-preview.nvim",
@@ -77,7 +76,13 @@ return require('packer').startup(function(use)
         -- Uncomment next line if you want to follow only stable versions
         tag = "*"
     }
-    use { 'tpope/vim-obsession' }
-    use { 'mhartington/formatter.nvim' }
+    use('mhartington/formatter.nvim')
+    use('tpope/vim-obsession')
+    use('tpope/vim-repeat')
+    use('tpope/vim-fugitive')
+    use('tpope/vim-surround')
+    use("tpope/vim-commentary")
+    use("tpope/vim-vinegar")
+    use("ggandor/leap.nvim")
     --use 'lervag/vimtex'
 end)
