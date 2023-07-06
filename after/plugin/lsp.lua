@@ -3,21 +3,19 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-    'tsserver',
-    'eslint',
-    'sumneko_lua',
-    'rust_analyzer',
+  'tsserver',
+  'eslint',
+  'rust_analyzer',
 })
 
--- Fix Undefined global 'vim'
-lsp.configure('sumneko_lua', {
+
+lsp.configure('hls', {
     settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
+        haskell = { -- haskell-language-server options
+            formattingProvider = 'ormolu',
+            checkProject = true, -- Setting this to true could have a performance impact on large mono repos.
     }
+}
 })
 
 

@@ -1,6 +1,7 @@
 require("theprimeagen.set")
 require("theprimeagen.remap")
 require("theprimeagen.packer")
+require("theprimeagen.paste")
 
 local augroup = vim.api.nvim_create_augroup
 local ThePrimeagenGroup = augroup('ThePrimeagen', {})
@@ -32,3 +33,5 @@ autocmd({ "BufWritePre" }, {
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
+
+require('leap').add_default_mappings()
