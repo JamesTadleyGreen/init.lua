@@ -8,13 +8,6 @@ return require("packer").startup(function(use)
     use("wbthomason/packer.nvim")
 
     use({
-        "nvim-telescope/telescope.nvim",
-        tag = "0.1.0",
-        -- or                            , branch = '0.1.x',
-        requires = { { "nvim-lua/plenary.nvim" } },
-    })
-
-    use({
         "rose-pine/neovim",
         as = "rose-pine",
         config = function()
@@ -22,11 +15,17 @@ return require("packer").startup(function(use)
         end,
     })
 
+    use({
+        "nvim-telescope/telescope.nvim",
+        tag = "0.1.0",
+        -- or                            , branch = '0.1.x',
+        requires = { { "nvim-lua/plenary.nvim" } },
+    })
+
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
     use("nvim-treesitter/playground")
     use("theprimeagen/harpoon")
     use("mbbill/undotree")
-    use("tpope/vim-fugitive")
 
     use({
         "VonHeikemen/lsp-zero.nvim",
@@ -52,7 +51,7 @@ return require("packer").startup(function(use)
     })
 
     use("folke/zen-mode.nvim")
-    use("github/copilot.vim")
+    use("Exafunction/codeium.vim")
     use("pbrisbin/vim-syntax-shakespeare")
     use("habamax/vim-godot")
     use("mfussenegger/nvim-dap")
@@ -79,15 +78,27 @@ return require("packer").startup(function(use)
         end,
         requires = "nvim-treesitter/nvim-treesitter",
         -- Uncomment next line if you want to follow only stable versions
-        tag = "*"
+        tag = "*",
     })
-    use('mhartington/formatter.nvim')
-    use('tpope/vim-obsession')
-    use('tpope/vim-repeat')
-    use('tpope/vim-fugitive')
-    use('tpope/vim-surround')
+    use("mhartington/formatter.nvim")
+    use("tpope/vim-obsession")
+    use("tpope/vim-repeat")
+    use("tpope/vim-fugitive")
+    use("tpope/vim-surround")
     use("tpope/vim-commentary")
     use("tpope/vim-vinegar")
     use("ggandor/leap.nvim")
+    -- Statusline
+    use({
+        "nvim-lualine/lualine.nvim",
+        requires = { "nvim-tree/nvim-web-devicons", opt = true },
+    })
+    -- Cusor
+    use({
+        "gen740/SmoothCursor.nvim",
+        config = function()
+            require("smoothcursor").setup()
+        end,
+    })
     --use 'lervag/vimtex'
 end)
