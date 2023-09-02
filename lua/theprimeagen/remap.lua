@@ -36,3 +36,6 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Clear the current search highlighting
 vim.keymap.set("n", "<leader><CR>", ":noh<CR>")
+
+-- Set jk to escape
+vim.keymap.set("i", "jk", "<ESC>")
