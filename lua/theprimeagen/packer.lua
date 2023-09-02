@@ -50,7 +50,6 @@ return require("packer").startup(function(use)
         },
     })
 
-    use("folke/zen-mode.nvim")
     use("Exafunction/codeium.vim")
     use("pbrisbin/vim-syntax-shakespeare")
     use("habamax/vim-godot")
