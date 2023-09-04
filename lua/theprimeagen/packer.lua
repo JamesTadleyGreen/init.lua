@@ -50,7 +50,6 @@ return require("packer").startup(function(use)
         },
     })
 
-    use("folke/zen-mode.nvim")
     use("Exafunction/codeium.vim")
     use("pbrisbin/vim-syntax-shakespeare")
     use("habamax/vim-godot")
@@ -92,6 +91,7 @@ return require("packer").startup(function(use)
     -- Statusline
     use({
         "nvim-lualine/lualine.nvim",
+        requires = { "nvim-tree/nvim-web-devicons", opt = true },
     })
     -- Cusor
     use({
@@ -123,5 +123,10 @@ return require("packer").startup(function(use)
     })
     use({
         "ray-x/lsp_signature.nvim",
+    })
+    --use 'lervag/vimtex'
+    use({
+        "m4xshen/hardtime.nvim",
+        requires = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
     })
 end)

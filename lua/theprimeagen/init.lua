@@ -35,3 +35,4 @@ vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
 require('leap').add_default_mappings()
+require('hardtime').setup()

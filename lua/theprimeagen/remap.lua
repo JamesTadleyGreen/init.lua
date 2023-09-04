@@ -35,3 +35,6 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 -- Clear the current search highlighting
 vim.keymap.set("n", "<leader><CR>", ":noh<CR>")
+
+-- Set jk to escape
+vim.keymap.set("i", "jk", "<ESC>")
