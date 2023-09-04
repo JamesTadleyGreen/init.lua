@@ -19,7 +19,7 @@ return require("packer").startup(function(use)
         "nvim-telescope/telescope.nvim",
         tag = "0.1.0",
         -- or                            , branch = '0.1.x',
-        requires = { { "nvim-lua/plenary.nvim" } },
+        requires = { "nvim-lua/plenary.nvim" },
     })
 
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
@@ -88,10 +88,10 @@ return require("packer").startup(function(use)
     use("tpope/vim-commentary")
     use("tpope/vim-vinegar")
     use("ggandor/leap.nvim")
+    use("junegunn/gv.vim")
     -- Statusline
     use({
         "nvim-lualine/lualine.nvim",
-        requires = { "nvim-tree/nvim-web-devicons", opt = true },
     })
     -- Cusor
     use({
@@ -100,5 +100,28 @@ return require("packer").startup(function(use)
             require("smoothcursor").setup()
         end,
     })
-    --use 'lervag/vimtex'
+    -- Adding in comment highlighting
+    -- TODO: Figure out how to get this working
+    use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
+    -- Showing notifications on a project level
+    use({
+        "folke/trouble.nvim",
+        opts = {
+            icons = false,
+            fold_open = "v",
+            fold_closed = ">",
+            indent_lines = true,
+            signs = {
+                error = "error",
+                warning = "warn",
+                hint = "hint",
+                information = "info",
+            },
+            use_diagnostic_signs = true,
+        },
+        requires = "nvim-tree/nvim-web-devicons",
+    })
+    use({
+        "ray-x/lsp_signature.nvim",
+    })
 end)
