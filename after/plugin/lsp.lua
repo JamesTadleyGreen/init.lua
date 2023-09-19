@@ -62,10 +62,6 @@ lsp.on_attach(function(client, bufnr)
         },
     }, bufnr)
 
-    vim.keymap.set({ "n" }, "<C-k>", function()
-        require("lsp_signature").toggle_float_win()
-    end, { silent = true, noremap = true, desc = "toggle signature" })
-
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
     vim.keymap.set("n", "<leader>vw", vim.lsp.buf.workspace_symbol, opts)
