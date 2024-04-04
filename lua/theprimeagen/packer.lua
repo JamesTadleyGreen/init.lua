@@ -54,7 +54,6 @@ return require("packer").startup(function(use)
     use("pbrisbin/vim-syntax-shakespeare")
     use("habamax/vim-godot")
     use("mfussenegger/nvim-dap")
-
     use({
         "iamcco/markdown-preview.nvim",
         run = function()
@@ -93,14 +92,6 @@ return require("packer").startup(function(use)
         "nvim-lualine/lualine.nvim",
         requires = { "nvim-tree/nvim-web-devicons", opt = true },
     })
-    -- Cusor
-    use({
-        "gen740/SmoothCursor.nvim",
-        config = function()
-            require("smoothcursor").setup()
-        end,
-    })
-    -- Adding in comment highlighting
     -- TODO: Figure out how to get this working
     use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
     -- Showing notifications on a project level
@@ -130,4 +121,32 @@ return require("packer").startup(function(use)
         requires = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
     })
     use("stevearc/oil.nvim")
+    use("karb94/neoscroll.nvim")
+    use({
+        "nvim-neorg/neorg",
+        config = require("neorg").setup({
+            load = {
+                ["core.defaults"] = {}, -- Loads default behaviour
+                ["core.concealer"] = {}, -- Adds pretty icons to your documents
+                ["core.export"] = {},
+                ["core.export.markdown"] = {},
+                ["core.dirman"] = { -- Manages Neorg workspaces
+                    config = {
+                        workspaces = {
+                            notes = "~/notes",
+                        },
+                    },
+                },
+                ["core.keybinds"] = {
+                    -- https://github.com/nvim-neorg/neorg/blob/main/lua/neorg/modules/core/keybinds/keybinds.lua
+                    config = {
+                        default_keybinds = true,
+                        neorg_leader = "<Leader><Leader>",
+                    },
+                },
+            },
+        }),
+        run = ":Neorg sync-parsers",
+        requires = "nvim-lua/plenary.nvim",
+    })
 end)
