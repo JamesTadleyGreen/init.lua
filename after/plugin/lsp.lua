@@ -74,7 +74,7 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<C-/>", vim.lsp.buf.formatting_sync, opts)
 
     -- Format on save
-    vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
+    -- vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
 end)
 
 lsp.setup()
