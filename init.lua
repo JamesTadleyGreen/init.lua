@@ -60,7 +60,7 @@ vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 15
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -654,6 +654,7 @@ require("lazy").setup({
 					--
 					-- <c-l> will move you to the right of each of the expansion locations.
 					-- <c-h> is similar, except moving you backwards.
+					-- TODO: Delete this, due to Harpoon
 					["<C-l>"] = cmp.mapping(function()
 						if luasnip.expand_or_locally_jumpable() then
 							luasnip.expand_or_jump()
@@ -794,7 +795,7 @@ require("lazy").setup({
 	--
 	--  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
 	--    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-	-- { import = 'custom.plugins' },
+	{ import = "plugins" },
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
@@ -819,3 +820,4 @@ require("lazy").setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+require("settings.set")
