@@ -18,24 +18,38 @@ return {
 	{ "tpope/vim-surround" },
 	{ "tpope/vim-repeat" },
 	{
+		"vhyrro/luarocks.nvim",
+		priority = 1000,
+		config = true,
+	},
+	{
 		"nvim-neorg/neorg",
-		build = ":Neorg sync-parsers",
-		-- tag = "*",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		dependencies = { "luarocks.nvim" },
+		version = "*",
 		config = function()
 			require("neorg").setup({
 				load = {
-					["core.defaults"] = {}, -- Loads default behaviour
-					["core.concealer"] = {}, -- Adds pretty icons to your documents
-					["core.dirman"] = { -- Manages Neorg workspaces
+					["core.defaults"] = {},
+					["core.concealer"] = {},
+					["core.dirman"] = {
 						config = {
 							workspaces = {
 								notes = "~/notes",
 							},
+							default_workspace = "notes",
 						},
 					},
 				},
 			})
+
+			vim.wo.foldlevel = 99
+			vim.wo.conceallevel = 2
+		end,
+	},
+	{
+		"mbbill/undotree",
+		config = function()
+			vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 		end,
 	},
 }

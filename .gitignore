@@ -1,5 +1,7 @@
 # nvim session
 Session.vim
 
-# compiled
-plugin/
+# Compiled
+lazy-lock.json
+.luarc.json
+
