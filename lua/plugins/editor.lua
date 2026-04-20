@@ -17,14 +17,14 @@ return {
 	{ "tpope/vim-commentary" },
 	{ "tpope/vim-surround" },
 	{ "tpope/vim-repeat" },
-	{
-		"vhyrro/luarocks.nvim",
-		priority = 1000,
-		config = true,
-	},
+	-- {
+	-- 	"vhyrro/luarocks.nvim",
+	-- 	priority = 1000,
+	-- 	config = true,
+	-- },
 	{
 		"nvim-neorg/neorg",
-		dependencies = { "luarocks.nvim" },
+		-- dependencies = { "luarocks.nvim" },
 		version = "*",
 		config = function()
 			require("neorg").setup({
